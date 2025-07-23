@@ -29,12 +29,19 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp | $(OBJ_DIR)
 $(OBJ_DIR)/player/%.o: $(PLAYER_SRC_DIR)/%.cpp | $(OBJ_DIR)/player
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
+# Compile src/attackStrategy/*.cpp files
+$(OBJ_DIR)/attackStrategy/%.o: $(PLAYER_SRC_DIR)/%.cpp | $(OBJ_DIR)/attackStrategy
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
 # Create necessary folders
 $(OBJ_DIR):
 	mkdir -p $(OBJ_DIR)
 
 $(OBJ_DIR)/player:
 	mkdir -p $(OBJ_DIR)/player
+
+$(OBJ_DIR)/attackStrategy:
+	mkdir -p $(OBJ_DIR)/attackStrategy
 
 $(BIN_DIR):
 	mkdir -p $(BIN_DIR)

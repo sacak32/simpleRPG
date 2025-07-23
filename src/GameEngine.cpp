@@ -17,6 +17,9 @@ void GameEngine::run() {
     // Create the player
     createPlayer();
 
+    // Create the enemy
+    enemy = std::make_unique<Enemy>();
+
     // Start the game
     playGame();
 }
@@ -72,7 +75,8 @@ bool GameEngine::processCommand(const std::string& command) {
     } else if (command == "status") { 
         player->displayStatus();
     } else if (command == "attack") {
-        player->attack();
+        bool isAlive = battle();
+        if (!isAlive) return false;
     } else {
         std::cout << "Invalid command!\n";
     }
@@ -89,4 +93,21 @@ void GameEngine::printHelp() const {
               << "w/west    : Move west\n"
               << "status    : Display status\n"
               << "attack    : Performs an attack\n";
+}
+
+bool GameEngine::battle() {
+    while (!player->isDead() && !enemy->isDead()) {
+        player->attack(*enemy);
+        if (enemy->isDead()) {
+            std::cout << "Enemy is dead\n";
+            break;
+        }
+
+        enemy->attack(*player);
+        if (player->isDead()) {
+            std::cout << "You are dead\n";
+            return false;
+        }
+    }
+    return true;
 }

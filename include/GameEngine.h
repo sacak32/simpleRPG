@@ -3,6 +3,7 @@
 #include <memory>
 
 #include "player/Player.h"
+#include "Enemy.h"
 
 /* Represents the game engine. Created as Singleton */
 class GameEngine {
@@ -34,5 +35,9 @@ private:
     // Prints the available commands
     void printHelp() const;
 
+    // Simulates the battle between player and enemy, returns is the player is alive after the battle.
+    bool battle();
+
     std::unique_ptr<Player> player;     // The player
+    std::unique_ptr<Enemy> enemy;       // The enemy
 };

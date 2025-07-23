@@ -1,20 +1,13 @@
 #include <iostream>
 
 #include "player/Player.h"
+#include "attackStrategy/NormalAttack.h"
 
-Player::Player(const std::string& _name, int _hp, int _mp) 
-    : name(_name), hp(_hp), mp(_mp), x(0), y(0) {}
+Player::Player(const std::string& name_, int hp_, int damage_) 
+    : Character(name_, hp_, damage_, 0, 0, std::make_unique<NormalAttack>()) {}
 
-// Moves the player by dx and dy
 void Player::move(int dx, int dy) {
     x += dx;
     y += dy;
     std::cout << name << " moves to (" << x << ", " << y << ")\n";
 }
-
-// Prints out the status of player
-void Player::displayStatus() const {
-    std::cout << "HP: " << hp
-              << ", MP: " << mp
-              << ", Position: (" << x << ", " << y << ")\n";
-}               

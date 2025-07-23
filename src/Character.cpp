@@ -18,14 +18,16 @@ void Character::attack(Character& character) {
     attackStrategy->attack(*this, character);
 }  
 
-int Character::getDamage() {
-    return damage;
-}
-
-bool Character::isDead() {
+bool Character::isDead() const {
     return hp <= 0;
 }
 
 void Character::applyDamage(int damage) {
     hp -= damage;
+    notifyObservers("HP_CHANGED");
+}
+
+void Character::notifyObservers(const std::string& event) {
+    for (Observer* o : observers)
+        o->onNotify(*this, event);
 }

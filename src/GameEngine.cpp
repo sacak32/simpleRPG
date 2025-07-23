@@ -20,6 +20,11 @@ void GameEngine::run() {
     // Create the enemy
     enemy = std::make_unique<Enemy>();
 
+    // Add low health observer to enemy and player
+    lowHealthObserver = std::make_unique<LowHealthObserver>();
+    player->addObserver(lowHealthObserver.get());
+    enemy->addObserver(lowHealthObserver.get());
+    
     // Start the game
     playGame();
 }

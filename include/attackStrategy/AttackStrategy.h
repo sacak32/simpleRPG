@@ -1,7 +1,5 @@
 #pragma once
 
-#include "Character.h"
-
 class Character; // Forward declaration
 
 class AttackStrategy {

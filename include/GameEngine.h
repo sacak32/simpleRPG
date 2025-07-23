@@ -4,6 +4,7 @@
 
 #include "player/Player.h"
 #include "Enemy.h"
+#include "observer/LowHealthObserver.h"
 
 /* Represents the game engine. Created as Singleton */
 class GameEngine {
@@ -40,4 +41,6 @@ private:
 
     std::unique_ptr<Player> player;     // The player
     std::unique_ptr<Enemy> enemy;       // The enemy
+
+    std::unique_ptr<LowHealthObserver> lowHealthObserver;
 };

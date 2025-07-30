@@ -1,6 +1,6 @@
 #include <memory>
 
-#include "Enemy.h"
+#include "character/Enemy.h"
 #include "attackStrategy/AggressiveAttack.h"
 
 Enemy::Enemy() 

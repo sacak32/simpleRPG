@@ -1,7 +1,7 @@
 #include <iostream>
 
 #include "GameEngine.h"
-#include "player/PlayerFactory.h"
+#include "character/player/PlayerFactory.h"
 
 GameEngine::GameEngine() {}
 

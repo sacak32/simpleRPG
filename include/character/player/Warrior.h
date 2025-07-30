@@ -1,6 +1,6 @@
 #pragma once
 
-#include "player/Player.h"
+#include "character/player/Player.h"
 
 class Warrior : public Player {
 public:

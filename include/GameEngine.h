@@ -2,8 +2,8 @@
 
 #include <memory>
 
-#include "player/Player.h"
-#include "Enemy.h"
+#include "character/player/Player.h"
+#include "character/Enemy.h"
 #include "observer/LowHealthObserver.h"
 
 /* Represents the game engine. Created as Singleton */

@@ -2,7 +2,7 @@
 
 #include <string>
 
-#include "Character.h"
+#include "character/Character.h"
 
 class Player : public Character {
 public:

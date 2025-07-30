@@ -3,7 +3,7 @@
 #include <memory>
 #include <string>
 
-#include "Character.h"
+#include "character/Character.h"
 
 class Enemy : public Character {
 public:

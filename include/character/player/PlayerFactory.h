@@ -3,7 +3,7 @@
 #include <memory>
 #include <string>
 
-#include "player/Player.h"
+#include "character/player/Player.h"
 
 class PlayerFactory {
 public:

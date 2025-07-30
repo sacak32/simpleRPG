@@ -1,9 +1,9 @@
 #include <iostream>
 
-#include "player/PlayerFactory.h"
-#include "player/Warrior.h"
-#include "player/Mage.h"
-#include "player/Archer.h"
+#include "character/player/PlayerFactory.h"
+#include "character/player/Warrior.h"
+#include "character/player/Mage.h"
+#include "character/player/Archer.h"
 
 bool PlayerFactory::isValidClass(const std::string& playerClass) {
     return  playerClass == "warrior" ||

@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "player/Player.h"
+#include "character/player/Player.h"
 #include "attackStrategy/NormalAttack.h"
 
 Player::Player(const std::string& name_, int hp_, int damage_) 

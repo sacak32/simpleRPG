@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "Character.h"
+#include "character/Character.h"
 
 Character::Character(std::string name_, int hp_, int damage_, int x_, int y_,
                      std::unique_ptr<AttackStrategy> attackStrategy_) 

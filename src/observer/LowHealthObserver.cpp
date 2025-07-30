@@ -1,7 +1,7 @@
 #include <iostream>
 
 #include "observer/LowHealthObserver.h"
-#include "Character.h"
+#include "character/Character.h"
 
 void LowHealthObserver::onNotify(const Character& character, const std::string& event) {
     if (event == "HP_CHANGED" && character.getHp() < 0)

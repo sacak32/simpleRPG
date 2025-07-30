@@ -11,6 +11,7 @@ target_include_directories(simpleRPG PRIVATE ${PROJECT_SOURCE_DIR}/include)
 
 # Link Libraries
 target_link_libraries(simpleRPG PRIVATE
+    playerLib
     characterLib
     attackStrategyLib
     observerLib

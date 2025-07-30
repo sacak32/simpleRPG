@@ -9,5 +9,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Put all executables in bin
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
 
+# Testing
+enable_testing()
+find_package(GTest REQUIRED)
+
 # Add subdirectories
 add_subdirectory(src)
+add_subdirectory(tests)
